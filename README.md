@@ -1,21 +1,11 @@
 # RPI - Snake
-
+![setup1](images/rpi-snake1.jpg)
 set up for rpi zero 2w and two temp sensors, for monitering two snake enclosure temperatures  
 keeps a record of temperature in influxdb and email out a warning if below 20degreesc heat i.e. bulb has blown  
-RPI will automaticaly update
-
-# to do
-- [x] install rpios lite
-- [x] set up one wire
-- [x] set up influxdb
-- [x] set up email
-- [x] set up temp script
-- [x] set up email when cold job
-- [x] set up auto update script
-- [ ] set up crontab jobs
-- [ ] test install script
-- [x] 3d print file
-- [ ] update email pdf
+RPI will automaticaly:  
+▪️ update overnight  
+▪️ take a temperature reading every 30 mins  
+▪️ email out an alert every 6h if under 20 degrees c  
 
 ## prerequisites
 - Raspberry pi Zero 2w
@@ -27,7 +17,7 @@ RPI will automaticaly update
 ## RPI setup instructions
 1) set up sensors as per diagram/image  
 ![One wire wireing diagram](images/One_wire_wireing_diagram.png)
-2) install Raspos
+2) install Raspi os lite 64
 3) install git on command line, clone files and run install script
     
         sudo apt install git -y && git clone https://github.com/01waltonad/rpi-snake.git && bash rpi-snake/Install.sh
@@ -41,38 +31,17 @@ RPI will automaticaly update
    
         ls /sys/bus/w1/devices/
 ![One wire folders](images/one_wire_folders.png)
+5) edit crontab files for your specification 
+> [!NOTE]
+> ▪️add in both file locations at the top  
+> ▪️update influx username, password and database near the bottom  
+> ▪️add in an email to send the alert to
 
+6) run update_crontab to update crontab files
 
-
-
+         bash rpi-snake/update_crontab.sh
 
 ## 3d print files
 all the 3d prints i used are on thingiverse  
 [Rpi zero case](https://www.thingiverse.com/thing:2823027)  
 [cable tile mounts](https://www.thingiverse.com/thing:5180246)
-
-
-## notes etc
-> [!NOTE]
-> ls /sys/bus/w1/devices/ to find 1wire serial numbers and make a note
-
-
-
-
-5) update 1wire interface in raspi-config and reboot - 3 interface, I8 1 wire
-> sudo raspi-config
-6) check 1 wire is working ok - this should show the two sensors
-> ls /sys/bus/w1/devices/
-
-
-
-
-
-3) 
-> [!NOTE]
-> insert bash command here for setup1#
-4) run raspi-config and enable 1wire
-
-git clone https://github.com/01waltonad/rpi-snake.git
-
-
