@@ -31,7 +31,7 @@ RPI will automaticaly:
    
         ls /sys/bus/w1/devices/
 ![One wire folders](images/folders.png)  
-5) edit crontab files for your specification 
+5) edit both temp crontab files for your specification 
 > [!NOTE]
 > ▪️add in both file locations at the top  
 > ▪️update influx username, password and database near the bottom  
