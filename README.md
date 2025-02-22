@@ -37,10 +37,10 @@ RPI will automaticaly update
 > ▪️make sure to change 1-wire interface setting to enabled then reboot in raspi-config towards the end of the set up   
 > ▪️make sure to reboot rpi to update settings
 
-4) for the two sensors, make a note of the 1 wire folders
+4) for the two sensors, make a note of the 1 wire folders starting with 28
    
         ls /sys/bus/w1/devices/
-
+![One wire folders](images/one_wire_folders.png)
 
 
 
