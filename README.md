@@ -30,7 +30,7 @@ RPI will automaticaly:
 4) for the two sensors, make a note of the 1 wire folders starting with 28
    
         ls /sys/bus/w1/devices/
-![One wire folders](images/one_wire_folders.png)
+![One wire folders](images/folders.png)  
 5) edit crontab files for your specification 
 > [!NOTE]
 > ▪️add in both file locations at the top  
