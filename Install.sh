@@ -88,7 +88,7 @@ existing_crontab=$(crontab -l 2>/dev/null)
 # Add the scheduled job to the existing crontab content
 new_crontab="${existing_crontab}
 */30 * * * * python3 /etc/temp.py
-5 */6 * * * python3 /etc/emp_email.py
+5 */6 * * * python3 /etc/temp_email.py
 10 2 * * * bash /etc/update_rpi.sh"
 
 # Install the modified crontab
